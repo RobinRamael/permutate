@@ -36,3 +36,9 @@ Iterator), so you could just do the following as well.
         // do cool stuff...
     }
 
+If you need to permutate a range of integers, you can use the static
+permutateRange methods in Permutations.
+
+    for (Collection<Integer> perm : Permutations.permutateRange(123,131)) {
+        //...
+    }
