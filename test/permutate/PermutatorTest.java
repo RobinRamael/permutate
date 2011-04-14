@@ -57,7 +57,7 @@ public class PermutatorTest {
 
     }
 
-    private static int fact(int n) {
+    public static int fact(int n) {
         int prod = 1;
         for (int i = 1; i <= n; i++) {
             prod *= i;

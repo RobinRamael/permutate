@@ -16,8 +16,10 @@
 
 package permutate;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * An <code>Iterable</code> that iterates over every permutation of a given collection.
@@ -43,5 +45,28 @@ public class Permutations<T> implements Iterable<Collection<T>> {
      */
     public Iterator<Collection<T>> iterator() {
         return new Permutator<T>(els);
+    }
+
+    /**
+     * Get the permutations object for a range of Integers between the given arguments.
+     * @param lower lower bound of the range. Included in the range itself.
+     * @param upper upper bound of the range. Not included in the range itself.
+     * @return an iterable that generates all permutations of the given range of integers.
+     */
+    public static Permutations<Integer> permutateRange(int lower, int upper) {
+        List<Integer> range = new ArrayList<Integer>();
+        for (int i = lower; i < upper; i++) {
+            range.add(i);
+        }
+        return new Permutations<Integer>(range);
+    }
+    /**
+     * Get the permutations object for a range of Integers between zero and the given
+     * argument.
+     * @param upper upper bound of the range. Not included in the range itself.
+     * @return an iterable that generates all permutations of the given range of integers.
+     */
+    public static Permutations<Integer> permutateRange(int upper) {
+        return permutateRange(0, upper);
     }
 }
